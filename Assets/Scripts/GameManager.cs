@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour {
     {
         while (enabled)
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(30);
             GameObject enemy = Spawner.Spawn("Final Boss");
 
             Vector3 pos = Camera.main.ViewportToWorldPoint(new Vector3(1.0f, 0.5f, -Camera.main.transform.position.z));
