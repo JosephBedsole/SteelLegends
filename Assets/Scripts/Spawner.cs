@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour {
             pools[prefab.name] = new List<GameObject>();
         }
 	}
-	public static GameObject Spawn (string name, bool spawnActive = false)
+	public static GameObject Spawn(string name, bool spawnActive = false)
     {
         GameObject spawn = null;
 
