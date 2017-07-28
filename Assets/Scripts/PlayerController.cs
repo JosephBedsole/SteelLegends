@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
         float y = Input.GetAxis("Vertical");
         player.body.velocity = Vector2.up * y * player.speed;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Fire1"))
         {
             GameObject bullet = Spawner.Spawn("Bullet");
             bullet.transform.position = transform.position;
@@ -117,6 +117,14 @@ public class PlayerController : MonoBehaviour {
             player.explosionParticle.Stop();
             player.explosionParticle.transform.position = transform.position;
             player.explosionParticle.Play();
+
+            GameManager.instance.StopCoroutine("SpawnEnemiesCoroutine");
+            GameManager.instance.StopCoroutine("SpawnVFormCoroutine");
+            GameManager.instance.StopCoroutine("SpawnFollowFormCoroutine");
+            GameManager.instance.StopCoroutine("SpawnTheBossMan");
+
+            AudioManager.instance.StartCoroutine("ChangeMusicBack");
+
         }
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MiniEyes : MonoBehaviour {
 
-    public float bulletSpeed = 20;
+    public float bulletSpeed = 10;
     public int points = 50;
-    public int healthCount = 30;
+    public int healthCount = 10;
 
     public Animation move;
 

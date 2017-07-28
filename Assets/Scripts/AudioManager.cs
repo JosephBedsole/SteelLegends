@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour {
     public static AudioManager instance;
 
     public AudioClip music;
+    public AudioClip music2;
     public AudioMixerGroup musicMixer;
     private int currentMusicSources;
     private AudioSource[] musicSources;
@@ -81,6 +82,22 @@ public class AudioManager : MonoBehaviour {
     
     public static void PlayMusic ()
     {
+        instance.musicSources[instance.currentMusicSources].clip = instance.music;
+        instance.musicSources[instance.currentMusicSources].Play();
+    }
+
+    IEnumerator ChangeMusic ()
+    {
+        instance.musicSources[instance.currentMusicSources].Stop();
+        yield return new WaitForSeconds(3);
+        instance.musicSources[instance.currentMusicSources].clip = instance.music2;
+        instance.musicSources[instance.currentMusicSources].Play();
+    }
+
+    IEnumerator ChangeMusicBack ()
+    {
+        instance.musicSources[instance.currentMusicSources].Stop();
+        yield return new WaitForSeconds(3);
         instance.musicSources[instance.currentMusicSources].clip = instance.music;
         instance.musicSources[instance.currentMusicSources].Play();
     }

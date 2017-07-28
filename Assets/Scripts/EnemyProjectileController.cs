@@ -55,6 +55,10 @@ public class EnemyProjectileController : MonoBehaviour {
         {
             gameObject.SetActive(false);
         }
+        if (c.gameObject.tag == "Wall")
+        {
+            gameObject.SetActive(false);
+        }
         //if (c.gameObject.tag == "Bullet")
         //{
         //    gameObject.SetActive(false);

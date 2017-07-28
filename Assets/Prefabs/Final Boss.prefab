@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 50082225458461902}
   - component: {fileID: 212470780440983650}
   - component: {fileID: 114615867300731446}
+  - component: {fileID: 95443547840934268}
   m_Layer: 0
   m_Name: Final Boss
   m_TagString: Untagged
@@ -303,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1216746552617574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.605748, y: 0.51152575, z: -9}
+  m_LocalPosition: {x: 6.40468, y: 0.85139155, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4790730099443510}
@@ -789,6 +790,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95443547840934268
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216746552617574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a917ae829363fc14d871aeb6f476dca4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114152876507423116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -800,11 +818,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620b02e8eeb221040857c5daa49775dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 10
   points: 50
-  healthCount: 30
+  healthCount: 10
   move: {fileID: 0}
-  eyeExplosion: {fileID: 0}
+  eyeExplosion: {fileID: 198263125145194900, guid: a374f74d934f3e14fb1e13565d607636,
+    type: 2}
 --- !u!114 &114269771704122204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -816,11 +835,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620b02e8eeb221040857c5daa49775dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 10
   points: 50
-  healthCount: 30
+  healthCount: 10
   move: {fileID: 0}
-  eyeExplosion: {fileID: 0}
+  eyeExplosion: {fileID: 198263125145194900, guid: a374f74d934f3e14fb1e13565d607636,
+    type: 2}
 --- !u!114 &114408905993180498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -832,11 +852,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620b02e8eeb221040857c5daa49775dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 10
   points: 50
-  healthCount: 30
+  healthCount: 10
   move: {fileID: 0}
-  eyeExplosion: {fileID: 0}
+  eyeExplosion: {fileID: 198263125145194900, guid: a374f74d934f3e14fb1e13565d607636,
+    type: 2}
 --- !u!114 &114445850944349322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -848,11 +869,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620b02e8eeb221040857c5daa49775dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 10
   points: 50
-  healthCount: 30
+  healthCount: 10
   move: {fileID: 0}
-  eyeExplosion: {fileID: 0}
+  eyeExplosion: {fileID: 198263125145194900, guid: a374f74d934f3e14fb1e13565d607636,
+    type: 2}
 --- !u!114 &114615867300731446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -878,11 +900,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620b02e8eeb221040857c5daa49775dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 10
   points: 50
-  healthCount: 30
+  healthCount: 10
   move: {fileID: 0}
-  eyeExplosion: {fileID: 0}
+  eyeExplosion: {fileID: 198263125145194900, guid: a374f74d934f3e14fb1e13565d607636,
+    type: 2}
 --- !u!212 &212059074908538530
 SpriteRenderer:
   m_ObjectHideFlags: 1

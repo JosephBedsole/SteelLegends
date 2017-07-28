@@ -12,6 +12,7 @@ TagManager:
   - MajorLaser
   - Shield
   - MiniEye
+  - Wall
   layers:
   - Default
   - TransparentFX

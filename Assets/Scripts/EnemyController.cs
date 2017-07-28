@@ -37,7 +37,10 @@ public class EnemyController : MonoBehaviour {
             AudioManager.PlayVariedEffect("StingerHit1");
             shake.Shake();
         }
-
+        if (c.gameObject.tag == "Wall")
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void ResetHealth()

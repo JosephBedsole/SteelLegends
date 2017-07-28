@@ -46,6 +46,10 @@ public class EyeLaser : MonoBehaviour {
             explosion.transform.position = transform.position;
             explosion.Play();
         }
+        if (c.gameObject.tag == "Wall")
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     IEnumerator Enemy2Coroutine()
@@ -65,7 +69,7 @@ public class EyeLaser : MonoBehaviour {
 
         while (spore == null)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             GameObject Spore = Spawner.Spawn("Spore");
             Spore.transform.position = transform.position;
             Spore.GetComponent<EnemyProjectileController>().Fire(Vector2.left);

@@ -12,7 +12,7 @@ public class BossController : MonoBehaviour {
 
     public int health = 100;
     public int points = 1000;
-    public int miniEyes = 10;
+    public int miniEyes = 5;
 
     void Awake()
     {
@@ -28,26 +28,25 @@ public class BossController : MonoBehaviour {
 
     void Update()
     {
-        SetSpawner();
         deathCheck();
     }
 
     private void OnTriggerEnter2D(Collider2D c)
     {
-       while (instance.miniEyes <= 0)
-         {
+      // while (instance.miniEyes <= 0)
+        // {
             if (c.gameObject.tag == "Bullet")
             {
                 instance.health -= 1;
                 AudioManager.PlayVariedEffect("StingerHit1");
             }
-        }
+       // }
     }
 
     public void MiniEyeDown ()
     {
         instance.miniEyes -= 1;
-        Debug.Log("Hello!");
+        Debug.Log("Oh no I'm dead!");
     }
 
     public void deathCheck ()
@@ -56,34 +55,34 @@ public class BossController : MonoBehaviour {
         {
             gameObject.SetActive(false);
             GameManager.instance.ScoreUp(points);
+
+            GameManager.instance.winText.gameObject.SetActive(true);
+
             ShakeController shake = Camera.main.gameObject.GetComponent<ShakeController>();
             shake.Shake();
+
+            AudioManager.instance.StartCoroutine("ChangeMusicBack");
+
         }
     }
 
-    public void SetSpawner ()
-    {
-        if (this != null)
-        {
-            GameManager.instance.StopCoroutine("SpawnEnemiesCoroutine");
-            GameManager.instance.StopCoroutine("SpawnTheBossMan");
-        }
-        else
-        {
-            GameManager.instance.StartCoroutine("SpawnEnemiesCoroutine");
-            GameManager.instance.StartCoroutine("SpawnTheBossMan");
-        } 
-    }
     IEnumerator SpawnLaser()
     {
         while (this != null)
         {
             yield return new WaitForSeconds(5);
+
+            // Charge Animation Here!
+
             GameObject laser = Spawner.Spawn("MajorLaser");
             laser.SetActive(true);
             laser.transform.position = transform.position;
             AudioManager.PlayVariedEffect("GiantLaser(5.5)");
             yield return new WaitForSeconds(2);
+            LaserController.StopLaser();
+        }
+        while (this == null)
+        {
             LaserController.StopLaser();
         }
     }
